@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReviewController;
@@ -31,3 +32,7 @@ Route::resource('products', ProductController::class)->only(['index', 'show'])
 Route::get('favorite/{product}/{user}', [ProductController::class, 'addFavorite'])
     ->name('admin.favorite.store');
 
+Route::resource('categories', CategoryController::class)->only(['index'])
+    ->names([
+        'index' => 'admin.categories.index',
+    ]);
