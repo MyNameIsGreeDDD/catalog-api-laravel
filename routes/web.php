@@ -27,3 +27,7 @@ Route::resource('products', ProductController::class)->only(['index', 'show'])
         'index' => 'admin.products.index',
         'show' => 'admin.products.show',
     ]);
+
+Route::get('favorite/{product}/{user}', [ProductController::class, 'addFavorite'])
+    ->name('admin.favorite.store');
+
