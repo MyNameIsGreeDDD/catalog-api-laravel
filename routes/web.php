@@ -22,5 +22,8 @@ Route::get('/', function () {
 Route::get('reviews/create/{product}', [ReviewsController::class, 'create'])->name('admin.reviews.create');
 Route::post('reviews/{product}', [ReviewsController::class, 'store'])->name('admin.reviews.store');
 
-Route::resource('products', ProductController::class)->only(['index'])
-    ->name('index', 'admin.products.index');
+Route::resource('products', ProductController::class)->only(['index', 'show'])
+    ->names([
+        'index' => 'admin.products.index',
+        'show' => 'admin.products.show',
+    ]);
