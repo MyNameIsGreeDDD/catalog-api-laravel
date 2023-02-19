@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ReviewsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('reviews/create/{product}', [ReviewsController::class, 'create'])->name('admin.reviews.create');
+Route::post('reviews/{product}', [ReviewsController::class, 'store'])->name('admin.reviews.store');
 
 Route::resource('products', ProductController::class)->only(['index'])
     ->name('index', 'admin.products.index');

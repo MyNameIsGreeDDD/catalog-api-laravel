@@ -33,7 +33,7 @@ class Review extends Model implements HasMedia
     use HasFactory, InteractsWithMedia;
 
     public $timestamps = false;
-    protected $fillable = ['first_name', 'text'];
+    protected $fillable = ['first_name', 'text','product_id'];
 
     public function product(): BelongsTo
     {
