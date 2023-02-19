@@ -23,12 +23,6 @@ Route::get('/', function () {
 Route::get('reviews/create/{product}', [ReviewController::class, 'create'])->name('admin.reviews.create');
 Route::post('reviews/{product}', [ReviewController::class, 'store'])->name('admin.reviews.store');
 
-Route::resource('products', ProductController::class)->only(['index', 'show'])
-    ->names([
-        'index' => 'admin.products.index',
-        'show' => 'admin.products.show',
-    ]);
-
 Route::get('favorite/{product}/{user}', [ProductController::class, 'addFavorite'])
     ->name('admin.favorite.store');
 
