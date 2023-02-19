@@ -10,7 +10,7 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\UploadedFile;
 
-class ReviewsController extends Controller
+class ReviewController extends Controller
 {
     public function create(Product $product): Factory|View|Application
     {
