@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ReviewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +17,6 @@ use App\Http\Controllers\ReviewController;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('reviews/create/{product}', [ReviewController::class, 'create'])->name('admin.reviews.create');
-Route::post('reviews/{product}', [ReviewController::class, 'store'])->name('admin.reviews.store');
 
 Route::get('favorite/{product}/{user}', [ProductController::class, 'addFavorite'])
     ->name('admin.favorite.store');
