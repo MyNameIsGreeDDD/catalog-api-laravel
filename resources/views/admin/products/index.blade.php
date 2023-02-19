@@ -18,6 +18,10 @@
                        target="_blank">
                         Добавить отзыв
                     </a>
+                    <a class="btn btn-xs btn-info" href="{{ route('admin.favorite.store', [$product->id,142]) }}"
+                       target="_blank">
+                        Добавить в избранное
+                    </a>
                 </td>
             </tr>
         @endforeach
