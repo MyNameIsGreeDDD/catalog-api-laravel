@@ -15,4 +15,10 @@ class ProductController extends Controller
 
         return view('admin.products.index', compact('products'));
     }
+
+    public function show(Product $product): Factory|View|Application
+    {
+        return view('admin.products.show', compact('product'));
+    }
+
 }
