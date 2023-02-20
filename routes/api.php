@@ -22,6 +22,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('products', [ProductController::class, 'index']);
+Route::get('products/search', [ProductController::class, 'search']);
+
 Route::get('favorites/{product}/{user}', [ProductController::class, 'updateFavorite']);
 
 Route::post('reviews/{product}', [ReviewController::class, 'store']);
